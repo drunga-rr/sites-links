@@ -2,97 +2,203 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Seu Cardápio Está Aqui!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sites</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
+    :root{
+      --bg: #0b1220;
+      --card: #111a2e;
+      --text: #e9eefc;
+      --muted: #b9c4e2;
+      --link: #8ab4ff;
+      --linkHover: #b9d2ff;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 14px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
       margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 10% 0%, #18264a 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.5;
     }
-    .container {
-      max-width: 700px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 16px 44px;
     }
-    h1 {
-      color: #e63946;
-      text-align: center;
+
+    header{
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px; /* era 18px (menor espaço acima do card) */
     }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
+
+    h1{
+      font-size: 20px;
+      margin: 0;
+      letter-spacing: 0.2px;
     }
-    .cta {
-      display: block;
-      width: 100%;
-      text-align: center;
-      margin: 30px 0;
+
+    .subtitle{
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
     }
-    .cta a {
-      background: #e63946;
-      color: #fff;
-      padding: 15px 30px;
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px; /* igual ao original */
+    }
+
+    /* Menos espaço vertical entre as seções */
+    section + section{
+      margin-top: 10px; /* era 14px */
+    }
+
+    /* Menos espaço entre o título (STREAMING) e os botões */
+    h2{
+      font-size: 14px;
+      margin: 0 0 6px 0; /* era 0 0 10px 0 */
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .links{
+      display: flex;
+      flex-wrap: wrap;
+
+      /* Mantém o mesmo espaçamento horizontal; reduz só o vertical entre linhas */
+      gap: 6px 10px; /* 1º = linhas (vertical), 2º = colunas (horizontal) */
+    }
+
+    .links a{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      /* Não alterado: tamanho/visual do botão fica igual */
+      padding: 10px 12px;
+      min-height: 40px;
+
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(17, 26, 46, 0.55);
+      color: var(--link);
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      font-size: 1.2em;
-      transition: background 0.3s;
+      font-size: 14px;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease, color .15s ease;
     }
-    .cta a:hover {
-      background: #d62828;
+
+    .links a:hover{
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.18);
+      color: var(--linkHover);
+      transform: translateY(-1px);
     }
-    .bonus {
-      background: #f1faee;
-      padding: 15px;
-      border-left: 5px solid #e63946;
-      margin-top: 20px;
+
+    .links a:focus-visible{
+      outline: 2px solid rgba(138,180,255,0.75);
+      outline-offset: 2px;
     }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 40px;
+
+    footer{
+      margin-top: 10px; /* era 14px */
+      color: var(--muted);
+      font-size: 12px;
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>🎉 Seu Cardápio Está Pronto!</h1>
-    <p>Parabéns por dar o primeiro passo para transformar seu corpo! Aqui está o seu <strong>Cardápio de 7 Dias para Secar até 2kg</strong>, com refeições simples, práticas e sem sofrimento.</p>
+  <div class="wrap">
+    <header>
+      <h1>Sites</h1>
+      <p class="subtitle">Atalhos</p>
+    </header>
 
-    <div class="cta">
-      <a href="LINK_DO_PDF_AQUI" target="_blank">📥 Baixar Cardápio Agora</a>
+    <div class="card">
+      <section>
+        <h2>Streaming</h2>
+        <div class="links">
+          <a href="https://reidoscanais.io/" target="_blank" rel="noopener noreferrer">Canais</a>
+          <a href="https://redecanais.gd/" target="_blank" rel="noopener noreferrer">RedeCanais</a>
+                 </div>
+      </section>
+
+      <section>
+        <h2>Tênis ao vivo</h2>
+        <div class="links">
+          <a href="https://tennistream.net/" target="_blank" rel="noopener noreferrer">Tenis ao vivo</a>
+          <a href="https://tennistream.com/live-2/" target="_blank" rel="noopener noreferrer">Tenis ao vivo 2</a>
+   <a href="https://cnnlivestreams.com/tentoday/" target="_blank" rel="noopener noreferrer">CNN</a>
+          <a href="https://tennistream.net/channel-1/" target="_blank" rel="noopener noreferrer">Canal 1</a>
+          <a href="https://tennistream.net/channel-2/" target="_blank" rel="noopener noreferrer">Canal 2</a>
+          <a href="https://tennistream.net/channel-3/" target="_blank" rel="noopener noreferrer">Canal 3</a>
+          <a href="https://tennistream.net/channel-4/" target="_blank" rel="noopener noreferrer">Canal 4</a>
+          <a href="https://tennistream.net/channel-5/" target="_blank" rel="noopener noreferrer">Canal 5</a>
+          <a href="https://tennistream.net/channel-6/" target="_blank" rel="noopener noreferrer">Canal 6</a>
+          <a href="https://tennistream.net/court-7/" target="_blank" rel="noopener noreferrer">Quadra 7</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Esportes & placares</h2>
+        <div class="links">
+          <a href="https://www.livescore.in/br/" target="_blank" rel="noopener noreferrer">LiveScore</a>
+          <a href="https://ge.globo.com/futebol/brasileirao-serie-a/" target="_blank" rel="noopener noreferrer">Brasileirão</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Leituras</h2>
+        <div class="links">
+          <a href="https://thoth3126.com.br/" target="_blank" rel="noopener noreferrer">Thoth3126</a>
+          <a href="https://www.elenadanaan.org/articles" target="_blank" rel="noopener noreferrer">Elena Danaan</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Serviços</h2>
+        <div class="links">
+          <a href="https://portal.detran.df.gov.br/#/home" target="_blank" rel="noopener noreferrer">Detran</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Trabalho</h2>
+        <div class="links">
+          <a href="https://docs.google.com/spreadsheets/d/1Eo6IHmS2xbkrTr3cKgWKKpbQtBVYhgB1NiGBInJ6fII/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Escala</a>
+          <a href="https://sei.df.gov.br/sip/login.php?sigla_orgao_sistema=GDF&sigla_sistema=SEI" target="_blank" rel="noopener noreferrer">SEI</a>
+          <a href="http://sigedem.sejus.df.gov.br/#/" target="_blank" rel="noopener noreferrer">SIGEDEM</a>
+          <a href="https://cas.gdfnet.df.gov.br/" target="_blank" rel="noopener noreferrer">Outlook</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Referência</h2>
+        <div class="links">
+          <a href="http://www.clem.ufba.br/tuts/html/default.htm" target="_blank" rel="noopener noreferrer">HTML</a>
+        </div>
+      </section>
+
+      <footer>
+        ***
+      </footer>
     </div>
-
-    <p>Esse cardápio é o mesmo que usamos no início do <strong>Método Vamos</strong>, e já ajudou milhares de pessoas a perderem peso e definirem o corpo com saúde e praticidade.</p>
-
-    <div class="bonus">
-      <h3>🔥 Bônus Especial</h3>
-      <p>Você também vai receber uma receita de <strong>Suco Termogênico</strong> para acelerar seus resultados!</p>
-    </div>
-
-    <p>Fique de olho no seu WhatsApp ou e-mail: nos próximos dias, vou te mandar mais dicas e conteúdos para te ajudar nessa jornada.</p>
-
-   <!-- DENTRO da div.container -->
-<p style="margin-bottom: 5px;">
-  Vamos juntos nessa transformação 💪
-</p>
-
-<iframe src="https://drive.google.com/file/d/1A4Iy-hk5SzqrbIAddVEOd1IBBiiofXdp/preview" 
-        width="640" 
-        height="360" 
-        allow="autoplay">
-</iframe>
-
-    <footer>
-      Método Vamos © Todos os direitos reservados
-    </footer>
+  </div>
 </body>
 </html>
-

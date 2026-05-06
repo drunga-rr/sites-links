@@ -86,22 +86,20 @@
     }
 
     .links a{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-      /* Não alterado: tamanho/visual do botão fica igual */
-      padding: 10px 12px;
-      min-height: 40px;
+  padding: 4px 10px;     /* ~60% de 10px 12px */
+  min-height: 20px;      /* ~60% de 40px */
 
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(17, 26, 46, 0.55);
-      color: var(--link);
-      text-decoration: none;
-      font-size: 14px;
-      transition: transform .08s ease, background .15s ease, border-color .15s ease, color .15s ease;
-    }
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(17, 26, 46, 0.55);
+  color: var(--link);
+  text-decoration: none;
+  font-size: 14px;
+}
 
     .links a:hover{
       background: rgba(255,255,255,0.06);
